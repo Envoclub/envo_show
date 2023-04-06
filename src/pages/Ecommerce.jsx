@@ -24,8 +24,8 @@ const Ecommerce = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400"> Carbon Emissions Saved</p>
-              <p className="text-2xl">tCO2</p>
+              <p className="font-bold text-gray-400"> Performance Summary </p>
+              <p className="text-2xl"></p>
             </div>
             <button
               type="button"
@@ -75,13 +75,13 @@ const Ecommerce = () => {
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Expense</span>
+                <span>offset Expense</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Budget</span>
+                <span>Offset Budget</span>
               </p>
             </div>
           </div>
@@ -94,28 +94,28 @@ const Ecommerce = () => {
                     23%
                   </span>
                 </p>
-                <p className="text-gray-500 mt-1">Budget</p>
+                <p className="text-gray-500 mt-1">offset Budget</p>
               </div>
               <div className="mt-8">
                 <p className="text-3xl font-semibold">$48,487</p>
 
-                <p className="text-gray-500 mt-1">Expense</p>
+                <p className="text-gray-500 mt-1">offset Expense</p>
               </div>
 
               <div className="mt-5">
-                <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
+                <SparkLine currentColor="blue" id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color='blue' />
               </div>
               <div className="mt-10">
                 <Button
                   color="white"
-                  bgColor={currentColor}
+                  bgColor="blue"
                   text="Download Report"
                   borderRadius="10px"
                 />
               </div>
             </div>
             <div>
-              <Stacked currentMode={currentMode} width="320px" height="360px" />
+              <Stacked width="320px" height="360px" />
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@ const Ecommerce = () => {
       <div className="flex gap-10 m-4 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
           <div className="flex justify-between items-center gap-2">
-            <p className="text-xl font-semibold">Recent Transactions</p>
+            <p className="text-xl font-semibold">Recent Events Impact</p>
             <DropDown currentMode={currentMode} />
           </div>
           <div className="mt-10 w-72 md:w-400">
@@ -190,12 +190,12 @@ const Ecommerce = () => {
               />
             </div>
 
-            <p className="text-gray-400 text-sm">36 Recent Transactions</p>
+            <p className="text-gray-400 text-sm">36 Recent events </p>
           </div>
         </div>
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
           <div className="flex justify-between items-center gap-2 mb-10">
-            <p className="text-xl font-semibold">Sales Overview</p>
+            <p className="text-xl font-semibold">Most Active Employees</p>
             <DropDown currentMode={currentMode} />
           </div>
           <div className="md:w-full overflow-auto">
