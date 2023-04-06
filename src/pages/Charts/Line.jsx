@@ -2,13 +2,25 @@ import React from 'react';
 
 import { ChartsHeader, LineChart } from '../../components';
 
-const Line = () => (
-  <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-    <ChartsHeader category="Line" title="Inflation Rate" />
-    <div className="w-full">
-      <LineChart />
-    </div>
-  </div>
-);
+const Line = () => {
+  return(
+    <ChartComponent
+      id="line-chart"
+      height='420px'
+      primaryXAxis={LinePrimaryXAxis}
+      primaryYAxis={LinePrimaryYAxis}
+      chartArea={ { border: {width:0}}}
+      tooltip={{enable:true}}
+      background={currentMode === 'Dark' ? '#33373E' : '#fff'}
+    >
+
+    <Inject services={[ LineSeries,DateTime,Legend,Tooltip ]} />
+    <SeriesCollectionDirective>
+      {lineCustomSeries.map((item,index) => <SeriesDirective key={index} {...item} />)}
+    </SeriesCollectionDirective>
+
+    </ChartComponent>
+  )
+}
 
 export default Line;
